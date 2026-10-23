@@ -1,0 +1,8 @@
+{
+  "name": "elsoci-landingpage",
+  "private": true,
+  "scripts": {
+    "dev": "LANDING_PORT=4173 python3 app.py",
+    "test": "python3 -m unittest discover -s tests && node --check static/app.js"
+  }
+}

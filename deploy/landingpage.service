@@ -1,0 +1,22 @@
+[Unit]
+Description=elsoci project landing page
+After=network.target
+
+[Service]
+User=landingpage
+Group=landingpage
+WorkingDirectory=/var/www/landingpage
+Environment=LANDING_DB=/var/lib/landingpage/landing.sqlite3
+Environment=LANDING_PORT=8093
+ExecStart=/usr/bin/python3 /var/www/landingpage/app.py
+Restart=on-failure
+RestartSec=5
+StateDirectory=landingpage
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
